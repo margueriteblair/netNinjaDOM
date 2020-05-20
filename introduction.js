@@ -7,3 +7,6 @@
 
 //while jquery can be used for a lot of this stuff, we can use pure vanilla javascript
 //we'll be creating a mini reading list application
+
+
+//ids are an attribute we use for html elements 
