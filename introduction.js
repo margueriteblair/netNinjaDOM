@@ -64,6 +64,21 @@ const addForm = document.forms["add-book"]
 addForm.addEventListener("submit", function(e){
     e.preventDefault()
     const value = addForm.querySelector('input[type="text"]').value
-    console.log(value)
+    
+    const li = document.createElement("li")
+    const bookName = document.createElement("span")
+    const deleteBtn = document.createElement("span")
+
+    //add text content to bookname and delete button
+
+    deleteBtn.textContent = "delete"
+    bookName.textContent = value;
+
+    li.appendChild(bookName)
+    li.appendChild(deleteBtn)
+    list.appendChild(li)
+
+
 })
 //this version means that the buttons aren't messed up when we add and delete the li elements
+
