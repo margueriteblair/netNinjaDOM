@@ -20,7 +20,8 @@
 // })
 
 const bookList = document.querySelector("#book-list")
-console.log(bookList.parentNode)
-console.log(bookList.parentElement.parentElement)
 
-console.log(bookList.children)
+console.log(bookList.nextSibling)
+console.log(bookList.nextElementSibling)
+
+bookList.previousElementSibling.querySelector("p").innerHTML += "<br>Too cool for everyone else"
