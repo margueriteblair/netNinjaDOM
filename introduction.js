@@ -39,3 +39,10 @@ Array.from(books).forEach(function(book){
 
 const bookList = document.querySelector("#book-list");
 bookList.innerHTML += "<p>This is how you add HTML</p>"
+
+let banner = document.querySelector("#page-banner")
+console.log(banner.nodeType)
+console.log(banner.hasChildNodes())
+
+const clonedBanner = banner.cloneNode(true)
+console.log(clonedBanner)
