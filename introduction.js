@@ -25,3 +25,25 @@ console.log(bookList.nextSibling)
 console.log(bookList.nextElementSibling)
 
 bookList.previousElementSibling.querySelector("p").innerHTML += "<br>Too cool for everyone else"
+
+//we add event listeners to different events. callback functions will
+
+let h2 = document.querySelector("#book-list h2")
+h2.addEventListener("click", function(event){
+    console.log(event.target)
+    console.log(event)
+})
+
+let buttons = document.querySelectorAll("#book-list .delete")
+Array.from(buttons).forEach(function(buttons){
+    buttons.addEventListener("click", function(e){
+        const li = e.target.parentElement
+        li.parentNode.removeChild(li)
+    })
+})
+
+const link = document.querySelector("#page-banner a")
+link.addEventListener("click", function(e){
+    e.preventDefault();
+    console.log(`Navigation to ${e.target.textContent} was prevented`)
+})
