@@ -1,15 +1,3 @@
-// //dom == document object model
-// //tree of elements/nodes 
-// //the nodes represent every html element on your webpage
-// //javascript lets us interact with the DOM
-// //we can CHANGE html elements, add CSS styling, create new HTML elements, attach event listeners to elements
-
-
-// //while jquery can be used for a lot of this stuff, we can use pure vanilla javascript
-// //we'll be creating a mini reading list application
-
-
-// //ids are an attribute we use for html elements 
 
 // let titles = document.getElementsByClassName("title")
 // //returns a pseudo array 
@@ -31,18 +19,8 @@
 //      console.log(item)
 // })
 
-let books = document.querySelector("#book-list li .name")
-books = document.querySelectorAll("#book-list li .name")
-Array.from(books).forEach(function(book){
-    (book.textContent += "(Book title)")
-})
+const bookList = document.querySelector("#book-list")
+console.log(bookList.parentNode)
+console.log(bookList.parentElement.parentElement)
 
-const bookList = document.querySelector("#book-list");
-bookList.innerHTML += "<p>This is how you add HTML</p>"
-
-let banner = document.querySelector("#page-banner")
-console.log(banner.nodeType)
-console.log(banner.hasChildNodes())
-
-const clonedBanner = banner.cloneNode(true)
-console.log(clonedBanner)
+console.log(bookList.children)
