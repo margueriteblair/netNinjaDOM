@@ -28,22 +28,35 @@ bookList.previousElementSibling.querySelector("p").innerHTML += "<br>Too cool fo
 
 //we add event listeners to different events. callback functions will
 
-let h2 = document.querySelector("#book-list h2")
-h2.addEventListener("click", function(event){
-    console.log(event.target)
-    console.log(event)
-})
+// let h2 = document.querySelector("#book-list h2")
+// h2.addEventListener("click", function(event){
+//     console.log(event.target)
+//     console.log(event)
+// })
 
-let buttons = document.querySelectorAll("#book-list .delete")
-Array.from(buttons).forEach(function(buttons){
-    buttons.addEventListener("click", function(e){
+// let buttons = document.querySelectorAll("#book-list .delete")
+// Array.from(buttons).forEach(function(buttons){
+//     buttons.addEventListener("click", function(e){
+//         const li = e.target.parentElement
+//         li.parentNode.removeChild(li)
+//     })
+// })
+
+// const link = document.querySelector("#page-banner a")
+// link.addEventListener("click", function(e){
+//     e.preventDefault();
+//     console.log(`Navigation to ${e.target.textContent} was prevented`)
+// })
+
+//after you fire an event listener, the event bubbles up to the parent element
+
+const list = document.querySelector("book-list ul")
+
+list.addEventListener("click", function(e){
+    if (e.target.className == 'delete') {
         const li = e.target.parentElement
-        li.parentNode.removeChild(li)
-    })
+        list.removeChild(li)
+    }
 })
 
-const link = document.querySelector("#page-banner a")
-link.addEventListener("click", function(e){
-    e.preventDefault();
-    console.log(`Navigation to ${e.target.textContent} was prevented`)
-})
+//this version means that the buttons aren't messed up when we add and delete the li elements
