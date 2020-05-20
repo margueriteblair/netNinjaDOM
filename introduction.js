@@ -50,13 +50,20 @@ bookList.previousElementSibling.querySelector("p").innerHTML += "<br>Too cool fo
 
 //after you fire an event listener, the event bubbles up to the parent element
 
-const list = document.querySelector("book-list ul")
+const list = document.querySelector("#book-list ul")
 
 list.addEventListener("click", function(e){
     if (e.target.className == 'delete') {
-        const li = e.target.parentElement
+        const li = e.target.parentElement;
         list.removeChild(li)
     }
 })
 
+
+const addForm = document.forms["add-book"]
+addForm.addEventListener("submit", function(e){
+    e.preventDefault()
+    const value = addForm.querySelector('input[type="text"]').value
+    console.log(value)
+})
 //this version means that the buttons aren't messed up when we add and delete the li elements
