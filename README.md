@@ -1,0 +1,1 @@
+Following along and taking notes on Net Ninja's DOM tutorial
