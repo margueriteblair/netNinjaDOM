@@ -24,8 +24,6 @@ const bookList = document.querySelector("#book-list")
 console.log(bookList.nextSibling)
 console.log(bookList.nextElementSibling)
 
-bookList.previousElementSibling.querySelector("p").innerHTML += "<br>Too cool for everyone else"
-
 //we add event listeners to different events. callback functions will
 
 // let h2 = document.querySelector("#book-list h2")
@@ -99,4 +97,19 @@ hideBox.addEventListener("change", function(e){
     if (hideBox.checked === true) {
         list.style.display = "none"
     } else list.style.display = "initial"
+})
+
+let searchBar = document.forms["search-books"].querySelector("input")
+searchBar.addEventListener("keyup", function(e){
+    const term = e.target.value.toLowerCase();
+    const books = list.getElementsByTagName("li")
+    Array.from(books).forEach(function(book){
+        const title = book.firstElementChild.textContent
+        if (title.toLowerCase().indexOf(term) != -1) {
+            book.style.display = "block"
+        } else {
+            book.style.display = "none"
+        }
+    })
+
 })
