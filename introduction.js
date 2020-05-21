@@ -76,7 +76,7 @@ addForm.addEventListener("submit", function(e){
 
     //add classes
     bookName.classList.add("name")
-    deleteBtn.classList.add(" delete")
+    deleteBtn.classList.add("delete")
 
     li.appendChild(bookName)
     li.appendChild(deleteBtn)
@@ -86,3 +86,17 @@ addForm.addEventListener("submit", function(e){
 })
 //this version means that the buttons aren't messed up when we add and delete the li elements
 
+//notes on manipulating attributes:
+//book.getAttribute("class") //this will return the elements withthat class name
+//book.setAttribute("class", "nameOfNewAttribute") this will change the attribute
+//book.hasAttribute('href") will return t/f depending on whether or not the element has that 
+//book.removeAttribute("class") this will remove the element(s) with that class name
+
+//hide books 
+
+let hideBox = document.querySelector("#hide")
+hideBox.addEventListener("change", function(e){
+    if (hideBox.checked === true) {
+        list.style.display = "none"
+    } else list.style.display = "initial"
+})
